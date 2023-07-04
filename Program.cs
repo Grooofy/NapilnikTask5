@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Order order = new Order(164, 10); 
+            
 
 
             //Выведите платёжные ссылки для трёх разных систем платежа: 
