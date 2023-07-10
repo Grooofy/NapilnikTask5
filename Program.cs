@@ -3,14 +3,17 @@
     class Program
     {
         static void Main(string[] args)
-        {
+        {         
+            Cash cash = new Cash();
+            Order order = new Order(20, 50);
             
+            NetPaySystem netPaySystem = new NetPaySystem();
+            PayMasterSystem payMasterSystem = new PayMasterSystem();
+            UnitPaySystem unitPaySystem = new UnitPaySystem();
 
-
-            //Выведите платёжные ссылки для трёх разных систем платежа: 
-            //pay.system1.ru/order?amount=12000RUB&hash={MD5 хеш ID заказа}
-            //order.system2.ru/pay?hash={MD5 хеш ID заказа + сумма заказа}
-            //system3.com/pay?amount=12000&curency=RUB&hash={SHA-1 хеш сумма заказа + ID заказа + секретный ключ от системы}
+            cash.ShowLink(netPaySystem, order);
+            cash.ShowLink(payMasterSystem, order);
+            cash.ShowLink(unitPaySystem, order);
         }
     }
 }
